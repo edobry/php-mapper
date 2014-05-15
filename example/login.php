@@ -40,43 +40,91 @@ $error="Your Login Name or Password is invalid";
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Login Page</title>
 		<style type="text/css">
-		body
-		{
-		font-family:Arial, Helvetica, sans-serif;
-		font-size:14px;
+		body {
+			font-family:Arial, Helvetica, sans-serif;
+			background-color: #25567B;
+			margin: 0;
 		}
-		label
-		{
-		font-weight:bold;
-		width:100px;
-		font-size:14px;
+
+		#wrapper {
+			margin: 0;
 		}
-		.box
-		{
-		border:#666666 solid 1px;
+
+		#main {
+			margin-top: 140px;
+			padding: 40px;
+
+			background-color: #3F92D2;
+			border: 3px solid #033E6B;
+			border-left: 0;
+			border-right: 0;
+		}
+
+		#formbox {
+			text-align: center;
+			margin: 0 auto 0 auto;
+			width: 300px;
+			background-color: #66A3D2;
+			padding: 30px;
+			border: 1px solid #25567B;
+		}
+
+		#login_title {
+			margin-bottom: 10px;
+			font-size: 30px;
+		}
+
+		input {
+			text-align: center;
+			padding: 5px;
+			margin-bottom: 25px;
+			color: #A65F00;
+			display: block;
+			width: 100%;
+			height: 30px;
+			border: none;
+		}
+
+		input[type=submit] {
+			padding: 10px;
+			width: 75%;
+			margin: 0 auto 10 auto;
+			background-color: #FFC373;
+			color: #25567B;
+			font-weight: bold;
+			font-size: 20px;
+			height: auto;
+		}
+		
+		input[type=submit]:active {
+			background-color: #FF9200;
+		}
+
+		#register_link {
+			text-decoration: none;
+			color: black;
+			margin-top: 30px;
+			font-size: 25px;
+			display: inline-block;
 		}
 		</style>
 	</head>
 	<body>
-		<div>
-			<div>
-				<div><b>Login</b></div>
-				<div>
+		<div id="wrapper">	
+			<div id="main">
+				<div id="formbox">
+					<div id="login_title">login</div>
 					<form action="" method="post">
-						<label>UserName  :</label><input type="text" name="username" class="box"/><br /><br />
-						<label>Password  :</label><input type="password" name="password" class="box" /><br/><br />
-						<input type="submit" value=" Submit "/><br />
+						<input type="text" name="username" placeholder="username" class="box"/>
+						<input type="password" name="password" placeholder="password"  class="box" />
+						<input type="submit" value="Submit"/> <a href="register.php" id="register_link">Register<a>
 					</form>
 					<?php
-						if( !is_null($error) ) { ?>
-					<div style="font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div> 
+					if( !is_null($error) ) { ?>
+					<div style="font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
 					<?php } ?>
 				</div>
 			</div>
-		</div>
-		<br><br><br>
-		<div>
-			<a href="register.php">Register<a>
 		</div>
 	</body>
 </html>
